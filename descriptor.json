@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "title": "NATS.io Activity",
   "description": "Publishes messages to a NATS.io cluster",
-  "homepage": "https://github.com/ripienaarflogo-nats-activity",
+  "homepage": "https://github.com/ripienaar/flogo-nats-activity",
   "settings": [
     {
       "name": "servers",
