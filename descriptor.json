@@ -1,0 +1,62 @@
+{
+  "name": "nats-activity",
+  "type": "flogo:activity",
+  "version": "0.0.1",
+  "title": "NATS.io Activity",
+  "description": "Publishes messages to a NATS.io cluster",
+  "homepage": "https://github.com/ripienaarflogo-nats-activity",
+  "settings": [
+    {
+      "name": "servers",
+      "type": "string",
+      "description": "The NATS cluster to connect to",
+      "required": true
+    },
+    {
+      "name": "credentials",
+      "type": "string",
+      "description": "If connect using NATS 2.0 credentials the local path with the credentials"
+    },
+    {
+      "name": "tls_key",
+      "type": "string",
+      "description": "If connecting to a server with private certs the path to your TLS key"
+    },
+    {
+      "name": "tls_cert",
+      "type": "string",
+      "description": "If connecting to a server with private certs the path to your TLS certificate"
+    },
+    {
+      "name": "tls_ca",
+      "type": "string",
+      "description": "If connecting to a server with private certs the path to your TLS CA"
+    },
+    {
+      "name": "topic",
+      "type": "string",
+      "required": true,
+      "description": "The topic to send the message to"
+    }
+  ],
+  "input": [
+    {
+      "name": "message",
+      "type": "string",
+      "required": true,
+      "description": "The message to publish"
+    },
+    {
+      "name": "wait_for_ack",
+      "type": "bool",
+      "description": "When publishing to JetStream request acknowledgement when publishing"
+    }
+  ],
+  "output": [
+    {
+      "name": "delivered",
+      "type": "bool",
+      "description": "If the message was delivered"
+    }
+  ]
+}
