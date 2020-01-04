@@ -161,8 +161,12 @@ func (h *Handler) natsSub() {
 
 func (h *Handler) Start() error {
 	go h.natsSub()
+
+	return nil
 }
 
 func (h *Handler) Stop() error {
 	close(h.shutdown)
+
+	return nil
 }
