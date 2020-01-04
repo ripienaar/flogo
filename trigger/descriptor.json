@@ -49,6 +49,11 @@
       "name": "message",
       "type": "string",
       "description": "The message that was consumed"
+    },
+    {
+      "name": "topic",
+      "type": "string",
+      "description": "Topic the message was received on"
     }
   ]
 }

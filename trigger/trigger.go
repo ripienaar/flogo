@@ -151,7 +151,7 @@ func (h *Handler) natsSub() {
 	for {
 		select {
 		case m := <-msgs:
-			h.handler.Handle(context.Background(), &Output{string(m.Data)})
+			h.handler.Handle(context.Background(), &Output{string(m.Data), m.Subject, m.Reply})
 		case <-h.shutdown:
 			sub.Unsubscribe()
 			return
