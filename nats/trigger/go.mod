@@ -1,4 +1,4 @@
-module github.com/ripienaar/flogo-nats-activity/trigger
+module github.com/ripienaar/flogo/nats/trigger
 
 go 1.13
 

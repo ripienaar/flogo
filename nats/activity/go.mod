@@ -1,4 +1,4 @@
-module github.com/ripienaar/flogo-nats-activity/activity
+module github.com/ripienaar/flogo/nats/activity
 
 go 1.13
 
