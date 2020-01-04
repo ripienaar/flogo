@@ -5,6 +5,7 @@
   "title": "Receive NATS.io Messages",
   "author": "R.I.Pienaar <rip@devco.net>",
   "description": "Receives messages from a NATS.io cluster",
+  "homepage": "https://github.com/ripienaar/flogo-nats-activity/trigger",
   "settings": [
     {
       "name": "servers",

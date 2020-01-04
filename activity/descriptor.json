@@ -5,7 +5,7 @@
   "title": "NATS.io Activity",
   "author": "R.I.Pienaar <rip@devco.net>",
   "description": "Publishes messages to a NATS.io cluster",
-  "homepage": "https://github.com/ripienaar/flogo-nats-activity",
+  "homepage": "https://github.com/ripienaar/flogo-nats-activity/activity",
   "settings": [
     {
       "name": "servers",
