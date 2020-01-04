@@ -1,10 +1,10 @@
 {
-  "name": "nats-activity",
-  "type": "flogo:activity",
+  "name": "nats-trigger",
+  "type": "flogo:trigger",
   "version": "0.0.1",
-  "title": "NATS.io Activity",
-  "description": "Publishes messages to a NATS.io cluster",
-  "homepage": "https://github.com/ripienaar/flogo-nats-activity",
+  "title": "Receive NATS.io Messages",
+  "author": "R.I.Pienaar <rip@devco.net>",
+  "description": "Receives messages from a NATS.io cluster",
   "settings": [
     {
       "name": "servers",
@@ -31,32 +31,23 @@
       "name": "tls_ca",
       "type": "string",
       "description": "If connecting to a server with private certs the path to your TLS CA"
-    },
-    {
-      "name": "topic",
-      "type": "string",
-      "required": true,
-      "description": "The topic to send the message to"
     }
   ],
-  "input": [
+  "handler": {
+    "settings": [
+      {
+        "name": "topic",
+        "type": "string",
+        "required": "true",
+        "description": "The NATS topic on which to listen for messages"
+      }
+    ]
+  },
+  "output": [
     {
       "name": "message",
       "type": "string",
-      "required": true,
-      "description": "The message to publish"
-    },
-    {
-      "name": "wait_for_ack",
-      "type": "bool",
-      "description": "When publishing to JetStream request acknowledgement when publishing"
-    }
-  ],
-  "output": [
-    {
-      "name": "delivered",
-      "type": "bool",
-      "description": "If the message was delivered"
+      "description": "The message that was consumed"
     }
   ]
 }

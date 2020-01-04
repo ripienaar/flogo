@@ -1,6 +1,7 @@
 package nats
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/nats-io/nats.go"
@@ -70,12 +71,19 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 	}
 
 	if input.Ack {
-		_, err = a.conn.Request(a.settings.Topic, []byte(input.Message), 5*time.Second)
+		m, err := a.conn.Request(a.settings.Topic, []byte(input.Message), 5*time.Second)
+		if err != nil {
+			return true, err
+		}
+
+		if string(m.Data) != "+OK" {
+			return true, fmt.Errorf("publishing to JetStream failed: %s", string(m.Data))
+		}
 	} else {
 		err = a.conn.Publish(a.settings.Topic, []byte(input.Message))
-	}
-	if err != nil {
-		return true, err
+		if err != nil {
+			return true, err
+		}
 	}
 
 	output := &Output{Delivered: true}
