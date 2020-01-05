@@ -1,0 +1,64 @@
+{
+  "name": "choria-machine-transition-activity",
+  "type": "flogo:activity",
+  "version": "0.0.1",
+  "title": "Choria Machine Transition",
+  "author": "R.I.Pienaar <rip@devco.net>",
+  "description": "Receives a Choria Machine Transition CloudEvent and expose it's details",
+  "homepage": "https://github.com/ripienaar/flogo/choria/activity/machine/transition",
+  "settings": [],
+  "input": [
+    {
+      "name": "cloudevent",
+      "type": "string",
+      "required": true,
+      "description": "The CloudEvent to process"
+    }
+  ],
+  "output": [
+    {
+      "name": "protocol",
+      "type": "string",
+      "description": "Protocol identifier"
+    },
+    {
+      "name": "identity",
+      "type": "string",
+      "description": "Originating identity"
+    },
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "version",
+      "type": "string",
+      "description": "Machine version that published the event"
+    },
+    {
+      "name": "timestamp",
+      "type": "int",
+      "description": "Time the event was created"
+    },
+    {
+      "name": "machine",
+      "type": "string",
+      "description": "Machine name"
+    },
+    {
+      "name": "transition",
+      "type": "string",
+      "description": "The transition event name"
+    },
+    {
+      "name": "from_state",
+      "type": "string",
+      "description": "The previous state the machine was in"
+    },
+    {
+      "name": "to_state",
+      "type": "string",
+      "description": "The state the machine entered"
+    }
+  ]
+}
